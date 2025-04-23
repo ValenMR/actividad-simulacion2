@@ -2,9 +2,8 @@
 
 |Integrante|correo|usuario github|
 |---|---|---|
-|Nombre completo integrante 1|correo integrante 1|gihub user integrante 1|
-|Nombre completo integrante 2|correo integrante 2|gihub user integrante 2|
-
+|Valentina Muñoz Rincón 🐜|valentina.munozr1@udea.edu.co|ValenMR|
+|Juan Felipe Escobar Rendón 🐔|juan.escobar15@udea.edu.co|juanfes517|
 ## Instrucciones
 
 Antes de empezar a realizar esta actividad haga un **fork** de este repositorio y sobre este trabaje en la solución de las preguntas planteadas en la actividad de simulación. Las respuestas deben ser respondidas en español o si lo prefiere en ingles en el lugar señalado para ello (La palabra **answer** muestra donde).
