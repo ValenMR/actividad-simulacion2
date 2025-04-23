@@ -1,28 +1,47 @@
-# Actividad de seguimiento - Simulación 2
+# 😎 Simulación 2 - MLFQ Scheduler Simulation Activity Report
 
-|Integrante|correo|usuario github|
+|Who are we?|Contact us|Github|
 |---|---|---|
 |Valentina Muñoz Rincón 🐜|valentina.munozr1@udea.edu.co|ValenMR|
 |Juan Felipe Escobar Rendón 🐔|juan.escobar15@udea.edu.co|juanfes517|
-## Instrucciones
 
-Antes de empezar a realizar esta actividad haga un **fork** de este repositorio y sobre este trabaje en la solución de las preguntas planteadas en la actividad de simulación. Las respuestas deben ser respondidas en español o si lo prefiere en ingles en el lugar señalado para ello (La palabra **answer** muestra donde).
-
-
-## Homework (Simulation)
+## 🖍 Exercise statement
 
 This program, [mlfq.py](mlfq.py), allows you to see how the MLFQ scheduler presented in this chapter behaves. See the [README](https://github.com/remzi-arpacidusseau/ostep-homework/blob/master/cpu-sched-mlfq/README.md) for details.
 
 
-### Questions
+#### ➡ Ejecute algunos problemas generados aleatoriamente con solo dos trabajos y dos colas. 
+#### ➡ Calcule el seguimiento de ejecución de MLFQ para cada uno. 
+#### ➡ Simplifique su trabajo limitando la duración de cada trabajo y desactivando las E/S.
 
-1. Run a few randomly-generated problems with just two jobs and two queues; compute the MLFQ execution trace for each. Make your life easier by limiting the length of each job and turning off I/Os.
 
-2. How would you run the scheduler to reproduce each of the examples in the chapter?
+## ❓Questions
+
+1. How would you run the scheduler to reproduce each of the examples in the chapter?
    
    <details>
-   <summary>Answer</summary>
-   Coloque aqui su respuerta
+   <summary>
+      LOOK AT ME!⬇
+   </summary>
+      
+   Comando ejecutado:
+      
+   ```bash
+   python3 mlfq.py -n 2 -M 10 -j 2 -Q "5,3"
+   ```
+   - `-n 2`: `2` colas en el MLFQ
+   - `-M 10`: tiempo máxima de ejecución en 10 unidades de tiempo
+   - `-j 2`: Define dos trabajos
+   - `-Q "5,3"`: quantum para las dos colas (la primera con más prioridad de `5` unidades de tiempo y la segunda con menos prioridad de `3` unidades de tiempo)     
+
+
+   #### Terminal:
+   
+   ![Image 1](ejercicio_1.png)
+
+   Ambos trabajos comienzan simultáneamente, pero debido a sus diferentes tiempos de ejecución y frecuencias de I/O, tienen trayectorias de ejecución distintas. El trabajo `0` tardará más tiempo debido a su mayor `runTime`, pero ambos están sujetos a interupciones por I/O y por las colas de prioridad.
+
+
    </details>
    <br>
 
