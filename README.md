@@ -73,28 +73,70 @@ This program, [mlfq.py](mlfq.py), allows you to see how the MLFQ scheduler prese
    </details>
    <br>
 
-4. Craft a workload with two jobs and scheduler parameters so that one job takes advantage of the older Rules 4a and 4b (turned on
-with the -S flag) to game the scheduler and obtain 99% of the CPU over a particular time interval.
+#### Ⅲ. Crear una carga de trabajo con dos trabajos y parámetros del programador para que un trabajo aproveche las antiguas Reglas 4a y 4b (activadas con el indicador -S) para manipular el programador y obtener el 99 % de la CPU durante un intervalo de tiempo particular.
 
    <details>
-   <summary>Answer</summary>
-   Coloque aqui su respuerta
+   <summary>
+      LOOK AT ME!⬇
+   </summary>
+
+   > **Reglas 4a & 4b** : Estas reglas están relacionadas con la prioridad del trabajo y la ejecución de los trabajos en el MLFQ:
+   
+   - Regla 4a: cuando existe una operación de I/O, de todas formas el trabajo mantiene su prioridad en la cola donde estaba a menos que esté configurado para cambiar la cola.
+   - Regla 4b: si un trabajo termina su allotment pero no ejecuta I/O, su prioridad aumenta o se mantiene igual en la cola de alta prioridad. 
+
+   Comando ejecutado:
+      
+   ```bash
+   python3 mlfq.py -n 2 -Q "5,3" -S --jlist 0,100,5:0,50,0
+   ```
+
+   - `-n 2`: Dos colas: una de alta prioridad y otra de baja.
+   - `-Q "5,3"`: el quantum para cada cola.
+   - `-S`: se activa la regla 4a y 4b para que el trabajo 1 no baje de prioridad cuando realice I/O.
+   - `--jlist 0,100,5:0,50,0`: defino los dos trabajos.
+
+   #### Terminal:
+   
+   ![Image 3](ejercicio_3.png)
+
+   En este caso, el trabajo 0 utiliza la mayor parte de la CPU gracias a la activación de las reglas 4a y 4b. Por otro lado, el trabajo 1, no realiza I/O pero pasará un tiempo esperando en la cola de baja prioridad y usará menos CPU. 
+   
    </details>
    <br>
 
-5. Given a system with a quantum length of 10 ms in its highest queue, how often would you have to boost jobs back to the highest priority level (with the `-B` flag) in order to guarantee that a single longrunning (and potentially-starving) job gets at least 5% of the CPU?
+#### Ⅳ. Dado un sistema con una longitud cuántica de 10 ms en su cola más alta, ¿con qué frecuencia debería aumentar los trabajos al nivel de prioridad más alto (con el indicador `-B`) para garantizar que un solo trabajo de larga duración (y potencialmente hambriento) obtenga al menos el 5 % de la CPU?
 
    <details>
-   <summary>Answer</summary>
-   Coloque aqui su respuerta
+   <summary>
+      LOOK AT ME!⬇
+   </summary>
+
+   > **Boosting** : es una herramienta del MLFQ el cual se utiliza para ajustar la prioridad de los trabajos en el sistema de colas. Lo que hace es aumentar la prioridad de los trabajos a intervalor regulares.
+
+   Comando ejecutado:
+      
+   ```bash
+   python3 mlfq.py -n 2 -Q "10,5" -B 200 --jlist 0,100,5:0,50,0
+   ```
+
+   - `-B 200`: el boosting ocurre cada 200ms, lo que garantiza que el trabajo de larga duración tenga al menos 10ms de CPU. 
+
+   #### Terminal:
+   
+   ![Image 4](ejercicio_4.png)
+
+   En esta parte, se puede observar que el trabajo 0 obtiene el mayor tiempo de CPU ya que hace las I/O frecuentemente y se boostea cada 200 ms, lo que ayuda a ponerlo en la cola de alta prioridad. Por el otro lado, el trabajo 1 no se beneficia del boosting por lo que está en la cola menos prioridad.
+      
    </details>
    <br>
 
-6. One question that arises in scheduling is which end of a queue to add a job that just finished I/O; the -I flag changes this behavior
-for this scheduling simulator. Play around with some workloads and see if you can see the effect of this flag.
+#### Ⅴ. Una pregunta que surge en la programación es en qué extremo de la cola se debe agregar un trabajo que acaba de finalizar la E/S. El indicador -I cambia este comportamiento en este simulador de programación. Experimente con algunas cargas de trabajo y vea si puede apreciar el efecto de este indicador.
 
    <details>
-   <summary>Answer</summary>
+   <summary>
+      LOOK AT ME!⬇
+   </summary>
    Coloque aqui su respuerta
    </details>
    <br>
