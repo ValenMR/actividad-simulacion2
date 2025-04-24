@@ -137,13 +137,38 @@ This program, [mlfq.py](mlfq.py), allows you to see how the MLFQ scheduler prese
    <summary>
       LOOK AT ME!⬇
    </summary>
-   Coloque aqui su respuerta
+
+   > **Indicador -I** : Este indicador cambia el comportamiento de cómo se maneja el trabajo que ha terminado una operación de I/O. Por defecto, lo que se hace es agregarlo al final de la cola pero si está presente este mecanismo, el trabajo que finaliza I/O se agrega al principio de su cola, dándole prioridad alta. 
+
+   Comando ejecutado:
+      
+   ```bash
+   python3 mlfq.py -n 2 -Q "10,5" -I --jlist "0,100,5:0,50,0"
+   ```
+
+   - `-I`: los trabajos que terminan de hace I/O son agregados al principio de su cola, dando prioridad. 
+
+   #### Terminal:
+   
+   ![Image 5](ejercicio_5.png)
+
+   Para este escenario, el indicador `-I` influye mucho en la planificación de los trabajos, pues prioriza a los trabajos con I/O frecuente, lo que mejora el rendimiento y rapidez de respuesta. 
+   
    </details>
    <br>
 
-## Conclusions
+## 🎤Conclusions
 
-Coloque aqui las conclusiones...
+Esta herramienta ayuda a entender detenidamente cómo funciona la gestión de procesos cuando se ejecuta cualquier programa en un sistema operativo. A lo largo de las pruebas realizadas con los indicadores pertinentes y atributos necesarios se pudo explotar diferentes aspectos que cómo se puede llegar a afectar la ejecución de los trabajos en el sistema.
+
+📥 Se aprendieron varios aspectos como:
+
+- La gestión de las prioridades de los trabajos
+- El impacto de los parámetros modificando sus valores
+- La interacción con el I/O y dándole prioridad
+- Cálculos en el desempeño
+
+<img src="/meme_1.jpg" width="200" height="150"/>
 
 
 ### Criterios de evaluación
