@@ -10,9 +10,9 @@
 This program, [mlfq.py](mlfq.py), allows you to see how the MLFQ scheduler presented in this chapter behaves. See the [README](https://github.com/remzi-arpacidusseau/ostep-homework/blob/master/cpu-sched-mlfq/README.md) for details.
 
 
-#### ➡ Ejecute algunos problemas generados aleatoriamente con solo dos trabajos y dos colas. 
-#### ➡ Calcule el seguimiento de ejecución de MLFQ para cada uno. 
-#### ➡ Simplifique su trabajo limitando la duración de cada trabajo y desactivando las E/S.
+#### ➡ Ejecutar algunos problemas generados aleatoriamente. 
+#### ➡ Calcular el seguimiento de ejecución teniendo en cuanta cada indicador a utilizar. 
+#### ➡ Modifique los I/O para entender los resultados.
 
 
 ## ❓Questions
