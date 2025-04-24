@@ -17,7 +17,7 @@ This program, [mlfq.py](mlfq.py), allows you to see how the MLFQ scheduler prese
 
 ## ❓Questions
 
-1. How would you run the scheduler to reproduce each of the examples in the chapter?
+#### Ⅰ. ¿Cómo ejecutarías el programador para reproducir cada uno de los ejemplos del capítulo?
    
    <details>
    <summary>
@@ -45,11 +45,31 @@ This program, [mlfq.py](mlfq.py), allows you to see how the MLFQ scheduler prese
    </details>
    <br>
 
-3. How would you configure the scheduler parameters to behave just like a round-robin scheduler?
+#### Ⅱ. ¿Cómo configurarías los parámetros del programador para que se comporten como un programador round-robin?
 
    <details>
-   <summary>Answer</summary>
-   Coloque aqui su respuerta
+   <summary>
+       LOOK AT ME!⬇   
+   </summary>
+   
+   > **Recordemos algo** : El RR es un algoritmo de planificación de CPU que proporciona un quantum fijo a cada proceso.
+
+   Comando ejecutado:
+      
+   ```bash
+   python3 mlfq.py -n 1 -Q "5"
+   ```
+
+   - `-n 1`: Solo una cola, lo que utiliza RR.
+   - `-Q "5"`: 5 unidades de tiempo para todos los trabajos.
+
+   #### Terminal:
+   
+   ![Image 2](ejercicio_2.png)
+
+   Dado que se configuró con una sola cola el algoritmo se comporta como un Round-Robin. Cada trabajo obtiene 5 unidades de tiempo en orden; si un trabajo no termina en su tiempo (5 unidades), se interrumpe y pasa al final de la cola, así se asgura que cada uno tenga su "turno" para una ejecución más justa y así al final se todos los trabajos se habrán completado. 
+
+   
    </details>
    <br>
 
